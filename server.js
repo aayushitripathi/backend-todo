@@ -13,9 +13,8 @@ mongoose.connect(DB_LOCAL, {
     useFindAndModify: false
     }).then((connection) => {
     console.log("DB connected");
-    app.listen(PORT, ()=>
-    {
-    console.log(`Server Started ${PORT}`);
+    app.listen(PORT || 3000,()=>{
+        console.log(`Server Started on port ${PORT || "3000"} `);
     })
     }).catch((err) => {
     console.log("Error connecting to DB" , err);
